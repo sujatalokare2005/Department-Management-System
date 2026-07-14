@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Attendance</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            background-image: url(b1.jpg);
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+          
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-image: url(s.jpeg);
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            height: 500%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+        }
+        input[type="text"], input[type="date"], select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Student Attendance</h2>
+        <form action="addstudprec.php" method="post" autocomplete="off">
+            <label for="id">Student ID:</label>
+            <input type="text" id="id" name="id" required>
+            <label for="name">Student Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="status">Status:</label>
+            <select id="status" name="status" required>
+                <option value="present">Present</option>
+                <option value="absent">Absent</option>
+            </select>
+            
+            <label for="year">Year:</label>
+            <select id="year" name="year" required>
+                <option value="FY">FY</option>
+                <option value="SY">SY</option>
+                <option value="TY">TY</option></select>
+            <button type="submit">Submit Attendance</button>
+        </form>
+    </div>
+    <script>
+        // Function to check if user is logged in
+        function isLoggedIn() {
+            // Simplified logic for testing
+            // Always return true for demonstration purposes
+            return true;
+        }
+    
+        // Listen for page navigation
+        window.addEventListener('pageshow', function(event) {
+            console.log('pageshow event triggered');
+            if (event.persisted && isLoggedIn()) {
+               // console.log('Redirecting to index.html');
+                // Navigated with back or forward button and user is logged in
+                window.location.href = "index.html";
+            }
+        });
+    </script>
+</body>
+</html>

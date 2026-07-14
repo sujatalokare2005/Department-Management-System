@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload TimeTable</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            background-image: url(b1.jpg);
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 400px;
+            background-image:url(s.jpeg) ;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+        }
+        input[type="file"], input[type="text"], input[type="submit"] {
+            margin-bottom: 15px;
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            margin-top: 10px;
+            margin-left: 35%;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid #060000; /* Set the border for the entire table */
+        }
+        table td {
+            padding: 8px;
+            border: 1px solid #0a0000;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        table tr:nth-child(2) {
+            text-align: center;
+        }
+        table tr:nth-child(3) input[type="text"] {
+            width: 20%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>TimeTable</h2>
+        <form action="show_timetable.php" method="post" enctype="multipart/form-data" autocomplete="off">
+           
+            <table border="">
+                <tr>
+                    <td>
+                        <label for="year">Year:</label>
+                        <input type="text" id="year" name="year" required>
+                    </td>
+                    <td>
+                        <label for="semester">Semester:</label>
+                        <input type="text" id="semester" name="semester" required>
+                    </td>
+                    <td>
+                        <label for="subject">Subject:</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </td>
+                </tr>
+            </table>
+
+            <button type="submit">Show TimeTable</button>
+        </form>
+    </div>
+    <script>
+        // Function to check if user is logged in
+        function isLoggedIn() {
+            // Simplified logic for testing
+            // Always return true for demonstration purposes
+            return true;
+        }
+    
+        // Listen for page navigation
+        window.addEventListener('pageshow', function(event) {
+            console.log('pageshow event triggered');
+            if (event.persisted && isLoggedIn()) {
+               // console.log('Redirecting to index.html');
+                // Navigated with back or forward button and user is logged in
+                window.location.href = "index.html";
+            }
+        });
+    </script>
+</body>
+</html>

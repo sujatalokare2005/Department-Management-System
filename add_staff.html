@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOD Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            background-image: url(b1.jpg);
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            background-image: url(s.jpeg);
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"], input[type="email"], input[type="password"], select {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Add Staff</h2>
+        <form id="staff" action="add_staff.php" method="POST" autocomplete="off">
+            <label for="id">ID:</label>
+            <input type="number" id="id" name="id" required><br>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br>
+
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city"><br>
+
+            <label for="district">District:</label>
+            <input type="text" id="district" name="district"><br>
+
+            <label for="education">Qualification:</label>
+            <input type="text" id="education" name="education"><br>
+
+            <label for="experience">Experience:</label>
+            <input type="text" id="experience" name="experiance"><br>
+
+            <label for="contact">Mobile No.:</label>
+            <input type="text" id="contact" name="contact"><br>
+
+            <label for="aadhar">Aadhar Number:</label>
+            <input type="text" id="aadhar" name="adhar"><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password"><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+        // Function to check if user is logged in
+        function isLoggedIn() {
+            // Simplified logic for testing
+            // Always return true for demonstration purposes
+            return true;
+        }
+    
+        // Listen for page navigation
+        window.addEventListener('pageshow', function(event) {
+            console.log('pageshow event triggered');
+            if (event.persisted && isLoggedIn()) {
+               // console.log('Redirecting to index.html');
+                // Navigated with back or forward button and user is logged in
+                window.location.href = "index.html";
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Attendance</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-image: url(b1.jpg);
+        background-size: cover;
+    }
+    form {
+        margin: 20px auto;
+        background-image: url(s.jpeg);
+        padding: 20px;
+        width: 300px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+    label, input {
+        display: block;
+        margin-bottom: 10px;
+    }
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+
+<form action="prec.php" method="post" autocomplete="off">
+    <label for="year">Select Year:</label>
+    <input type="text" id="year" name="year" required>
+    <label for="month">Month (1-12):</label>
+    <input type="number" id="month" name="month" min="1" max="12" required>
+    <input type="submit" value="Check Attendance">
+</form>
+<script>
+    // Function to check if user is logged in
+    function isLoggedIn() {
+        // Simplified logic for testing
+        // Always return true for demonstration purposes
+        return true;
+    }
+
+    // Listen for page navigation
+    window.addEventListener('pageshow', function(event) {
+        console.log('pageshow event triggered');
+        if (event.persisted && isLoggedIn()) {
+           // console.log('Redirecting to index.html');
+            // Navigated with back or forward button and user is logged in
+            window.location.href = "index.html";
+        }
+    });
+</script>
+
+</body>
+</html>
